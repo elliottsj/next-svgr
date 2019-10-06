@@ -3,7 +3,7 @@ const withSvg = (nextConfig = {}, nextComposePlugins = {}) => {
     webpack(config, options) {
       config.module.rules.push({
         test: /\.svg$/,
-        use: ["@svgr/webpack"]
+        use: [require.resolve("@svgr/webpack")]
       });
 
       if (typeof nextConfig.webpack === "function") {
